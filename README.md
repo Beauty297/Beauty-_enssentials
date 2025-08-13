@@ -1,0 +1,410 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Essentials - Premium Products</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b9d, #c44569);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff6b9d;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #e55a87;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #c44569;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #f0f0f0;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #ff9ec5, #ffb3d1);
+            border-radius: 15px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .product-card h3 {
+            color: #c44569;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .product-card p {
+            margin-bottom: 1.5rem;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff6b9d;
+            margin-bottom: 1rem;
+        }
+
+        .product-btn {
+            background: #667eea;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .product-btn:hover {
+            background: #5a6fd8;
+            transform: scale(1.05);
+        }
+
+        .trending-badge {
+            position: absolute;
+            top: -10px;
+            right: 10px;
+            background: #ff4757;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .product-card {
+            position: relative;
+        }
+
+        .features {
+            background: #f8f9ff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: #ff6b9d;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .footer {
+            background: #2c2c2c;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #ff9ec5;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #ff9ec5;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">Beauty Essentials</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Premium Beauty & Pet Care Products</h1>
+            <p>Discover trending beauty tools and pet care essentials that make life easier and more beautiful</p>
+            <a href="#products" class="btn">Shop Trending Products</a>
+        </div>
+    </section>
+
+    <section class="section" id="products">
+        <div class="container">
+            <h2 class="section-title">Our Trending Products</h2>
+            <div class="products-grid">
+                
+                <div class="product-card">
+                    <span class="trending-badge">TRENDING</span>
+                    <div class="product-image">🖤</div>
+                    <h3>Blackhead Remover</h3>
+                    <p>Professional-grade blackhead remover tool with multiple attachments. Safe and effective for deep pore cleaning and skin purification.</p>
+                    <div class="product-price">$24.99</div>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <span class="trending-badge">HOT</span>
+                    <div class="product-image">✂️</div>
+                    <h3>Rechargeable Eyebrow Trimmer</h3>
+                    <p>Precision eyebrow trimmer with LED light and multiple guard attachments. Rechargeable battery for cordless convenience.</p>
+                    <div class="product-price">$19.99</div>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <span class="trending-badge">BEST SELLER</span>
+                    <div class="product-image">🧽</div>
+                    <h3>Electric Silicone Facial Cleaning Brush</h3>
+                    <p>Gentle electric facial cleansing brush with soft silicone bristles. Waterproof design with multiple speed settings for all skin types.</p>
+                    <div class="product-price">$34.99</div>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <span class="trending-badge">NEW</span>
+                    <div class="product-image">🐕</div>
+                    <h3>Dog Cooling Mat</h3>
+                    <p>Self-cooling gel mat for dogs and cats. No electricity needed - activates with your pet's body weight. Perfect for hot summer days.</p>
+                    <div class="product-price">$29.99</div>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+
+                <div class="product-card">
+                    <span class="trending-badge">TRENDING</span>
+                    <div class="product-image">🐾</div>
+                    <h3>Paw Cleaners</h3>
+                    <p>Portable paw cleaner cup with soft silicone bristles. Easy-to-use design removes dirt and mud from your dog's paws after walks.</p>
+                    <div class="product-price">$16.99</div>
+                    <button class="product-btn">Add to Cart</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section features" id="about">
+        <div class="container">
+            <h2 class="section-title">Why Choose Our Products</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>High Quality</h3>
+                    <p>All products are tested for durability and effectiveness. We only sell items we would use ourselves.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Fast Shipping</h3>
+                    <p>Quick delivery within 2-5 business days. Track your order every step of the way.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <h3>Great Prices</h3>
+                    <p>Competitive pricing on trending products. Get premium quality without breaking the bank.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Easy Returns</h3>
+                    <p>30-day return policy. Not satisfied? Return it hassle-free for a full refund.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <a href="mailto:info@beautyessentials.com">info@beautyessentials.com</a>
+                    <a href="tel:+1234567890">+1 (234) 567-890</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#home">Home</a>
+                    <a href="#products">Products</a>
+                    <a href="#about">About Us</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <a href="#">Shipping Info</a>
+                    <a href="#">Returns</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+            <p>&copy; 2024 Beauty Essentials. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
