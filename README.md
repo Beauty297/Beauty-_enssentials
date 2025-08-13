@@ -13,20 +13,13 @@
     </div>
     <button type="submit" class="cta-button">Send Message</button>
 </form>
-`` click “Commit changes.”
+`` 
    - If using local files:  
      - Save, then run `git add index.html`, `git commit -m "Update contact form to use Formspree sample endpoint"`, and `git push`.
 
 5. **Visit your site:**  
    - [https://beauty297.github.io/beauty_enssentials/](https://beauty297.github.io/beauty_enssentials/)
-   - Go to the contact form, fill it out, and submit.
-
----
-
-**This will allow you to test your form.**  
-If you want to receive messages directly to your email, you’ll need your own Formspree endpoint once you can access their dashboard.
-
-**Let me know if you need step-by-step help with editing your repo or if you want to try another contact form solution!**
+   
 <html lang="en">
 <head>
     <meta charset="UTF-8">
