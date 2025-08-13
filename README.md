@@ -16,7 +16,7 @@
             line-height: 1.6;
             color: #333;
         }
-
+fix deployment 
         .header {
             background: linear-gradient(135deg, #ff6b9d, #c44569);
             color: white;
