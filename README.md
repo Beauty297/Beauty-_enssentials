@@ -12,10 +12,7 @@
         <textarea id="message" name="message" rows="5" required></textarea>
     </div>
     <button type="submit" class="cta-button">Send Message</button>
-</form>
-`` 
-   - If using local files:  
-     - Save, then run `git add index.html`, `git commit -m "Update contact form to use Formspree sample endpoint"`, and `git push`.
+</for index.html`, `git commit -m "Update contact form to use Formspree sample endpoint"`, and `git push`.
 
 5. **Visit your site:**  
    - [https://beauty297.github.io/beauty_enssentials/](https://beauty297.github.io/beauty_enssentials/)
